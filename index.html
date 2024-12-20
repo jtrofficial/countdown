@@ -3,6 +3,9 @@
   <style>
     html {
       background-image: url("chri.jpg");
+      background-position: center;
+ 	  background-repeat: no-repeat;
+  	  background-size: cover;
     }
     body {
       font-family: Arial, sans-serif;
@@ -24,8 +27,8 @@
 </head>
 <body>
   <div>
-    <h1>Countdown to winter break</h1>
-    <div class="countdown" id="countdown"></div>
+    <h1 style="font-size: 100px">Countdown to winter break</h1>
+    <div class="countdown" id="countdown" style="font-size: 100px"></div>
   </div>
 
   <script>
@@ -35,7 +38,7 @@
       const timeDiff = targetDate - now;
 
       if (timeDiff <= 0) {
-        document.getElementById('countdown').textContent = 'Time is up!';
+        document.getElementById('countdown').textContent = 'Break time!';
         clearInterval(interval);
         return;
       }
