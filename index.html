@@ -1,0 +1,54 @@
+<head>
+	<title>Countdown to break</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url("chri.jpg");
+      color: #61dafb;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .countdown {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Countdown to winter break</h1>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <script>
+    function updateCountdown() {
+      const targetDate = new Date('2024-12-20T15:00:10');
+      const now = new Date();
+      const timeDiff = targetDate - now;
+
+      if (timeDiff <= 0) {
+        document.getElementById('countdown').textContent = 'Time is up!';
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+      const milliseconds = timeDiff % 1000;
+
+      document.getElementById('countdown').textContent = 
+        `${days}d ${hours}h ${minutes}m ${seconds}s ${milliseconds}ms`;
+    }
+
+    const interval = setInterval(updateCountdown, 10);
+    updateCountdown();
+  </script>
+</body>
