@@ -33,22 +33,25 @@
 </head>
 <body>
   <div>
-    <h1 style="font-size: 100px">Countdown to winter break</h1>
+    <h1 id='title' style="font-size: 100px">Countdown to winter break</h1>
     <div class="countdown" id="countdown" style="font-size: 90px"></div>
   </div>
 
   <script>
+    var date = '2024-12-20T15:00:10';
     var update = 10;
     function updateCountdown() {
-      const targetDate = new Date('2024-12-20T15:00:10');
+      const targetDate = new Date(date);
       const now = new Date();
       const timeDiff = targetDate - now;
 
       if (timeDiff <= 0) {
-        document.getElementById('countdown').textContent = 'Break time!';
+        document.getElementById('countdown').textContent = 'N/A you should not see this';
+        document.getElementById('title').textContent = 'Countdown to New year';
+     //   var date = '2025-01-00T00:00:00'   WHY DOES THIS BREAK THE COUNTDOWN!?
         clearInterval(interval);
         return;
-      }
+              }
 
      
       const milliseconds = timeDiff % 1000;
