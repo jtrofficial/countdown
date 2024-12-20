@@ -20,8 +20,14 @@
     h1 {
       font-size: 2rem;
     }
-    .countdown {
+    #countdown {
       font-size: 1.5rem;
+    }
+    #footer {
+      position: absolute;
+      align-items: center;
+      text-align: center;
+      bottom: 1px;
     }
   </style>
 </head>
@@ -79,4 +85,7 @@
     const interval = setInterval(updateCountdown, update);
     updateCountdown();
   </script>
+  <footer id='footer'>
+    <p style="color: black;">©2024/25 Joshua Allen Thayer</p>
+  </footer>
 </body>
